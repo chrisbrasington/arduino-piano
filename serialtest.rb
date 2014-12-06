@@ -1,8 +1,9 @@
 require 'serialport'
-time = Time.now.to_i
 
 sp = SerialPort.new "/dev/ttyACM0", 9600
 
-sp.write time 
+while input = gets.chomp
+	sp.write input
+end
 
 sp.close
