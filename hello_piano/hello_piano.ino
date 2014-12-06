@@ -49,7 +49,7 @@ void setup ()
   lcd.begin(16, 2);                         // set the lcd dimension
   lcd.clear();
   lcd.setCursor(0,0);              
-  lcd.print("Hello Piano!");
+  lcd.print("Hello World!");
   lcd.setCursor(0,1);
   lcd.print("Press any key"); 
   adc_key_old = analogRead(analogPin);      // store the unpress key value 

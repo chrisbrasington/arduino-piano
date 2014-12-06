@@ -1,9 +1,8 @@
-require 'dino'
+require 'serialport'
+time = Time.now.to_i
 
-board = Dino::Board.new(Dino::TxRx::Serial.new)
-led = Dino::Components::Led.new(pin: 13, board: board)
+sp = SerialPort.new "/dev/ttyACM0", 9600
 
-[:on, :off].cycle do |switch|
-  led.send(switch)
-  sleep 0.5
-end
+sp.write time 
+
+sp.close
